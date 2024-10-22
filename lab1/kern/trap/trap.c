@@ -94,7 +94,7 @@ void do_entIF(struct trapframe *tf)
     cprintf("Illegal instruction at PC: 0x%016lx\n", tf->gpr.pc);        // 输出当前指令的地址
     cprintf("Instruction content: 0x%08x\n", *(uint32_t *)(tf->gpr.pc)); // 输出当前指令的内容
     // panic("Illegal instruction encountered. System halted.");
-    cprintf("Replace the instruction with a NOP instruction.\n");
+    cprintf("Replace the instruction with a NOP instruction.\n"); // 替换为NOP指令
     *(uint32_t *)tf->gpr.pc = 0x43ff075f;
     cprintf("Instruction content: 0x%08x\n", *(uint32_t *)(tf->gpr.pc));
     cprintf("Instruction replaced. Continue running.\n");
