@@ -415,7 +415,7 @@ void page_remove_pdx2(pde_t *pgdir, uintptr_t la)
 
     if (page_ref(pgdir_page) == 0)
     {
-        boot_pgdir[0] = 0;
+        pgdir[0] = 0;
     }
     tlb_invalidate(pgdir, la);
 
